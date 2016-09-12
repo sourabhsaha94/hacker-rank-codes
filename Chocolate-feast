@@ -1,0 +1,38 @@
+Question: Chocolate Feast
+Little Bobby loves chocolate, and he frequently goes to his favorite  store, Penny Auntie, with n dollars to buy chocolates. Each chocolate has a flat cost of c dollars, and the store has a promotion where they allow you to trade in m chocolate wrappers in exchange for 1 free piece of chocolate.
+
+Given n, c, and m for t trips to the store, can you determine how many chocolates Bobby eats during each trip?
+
+Answer:
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int t = in.nextInt();
+        int num=0,wrap=0;
+        for(int a0 = 0; a0 < t; a0++){
+            num=0;
+            wrap=0;
+            int n = in.nextInt();//total cash
+            int c = in.nextInt();//cost of one choc
+            int m = in.nextInt();//min threshold for n=n+1
+            num=(n/c);
+            
+            wrap=num;
+            while(wrap>=m){
+                wrap=wrap-m;
+                num++;
+                wrap++;
+            }
+            
+            System.out.println(num);
+        }
+    }
+}
+
